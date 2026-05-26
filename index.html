@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syeen 林熹嵘 &mdash; To Empower More Individuals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F8F3EC; --cream-deep: #EDE4D6;
+      --cream-border: rgba(160,130,100,0.18);
+      --terra: #8B4A2B; --terra-light: #B56A45; --terra-deep: #6D3820;
+      --terra-muted: rgba(139,74,43,0.06);
+      --ink: #3D2A20; --ink-2: #6B5748; --ink-3: #9B887A;
+      --gold-glow: rgba(210,170,110,0.22); --gold-glow-2: rgba(210,170,110,0.07);
+      --serif: 'Cormorant Garamond',Georgia,serif;
+      --sans: 'DM Sans',system-ui,sans-serif;
+      --mincho: 'Noto Serif SC','GenYoMinTW','Source Han Serif SC','Songti SC','Times New Roman',serif;
+      --phase1-line: #8C8A86;
+      --phase4-a: #E2C270; --phase4-b: #B07AA1;
+      --cosmic-deep: #1a1432; --cosmic-mid: #221c3a; --cosmic-surface: rgba(255,250,245,0.025);
+      --cosmic-border: rgba(255,255,255,0.07); --cosmic-text: #dbd4ca; --cosmic-muted: #8c8298;
+      --star: #E2C270; --cosmic-purple: #B07AA1;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    .serif{font-family:var(--serif)}.mincho{font-family:var(--mincho)}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3.5rem;background:transparent;transition:background 0.4s,backdrop-filter 0.4s}
+    nav.scrolled{background:rgba(248,243,236,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:0.5px solid var(--cream-border)}
+    .nav-logo{font-family:var(--serif);font-size:1.35rem;font-style:italic;font-weight:400;letter-spacing:0.015em;color:var(--ink);text-decoration:none;position:relative}
+    .nav-logo-mark{font-style:italic;font-weight:600;color:var(--terra)}
+    .nav-logo::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:0.5px;background:linear-gradient(to right,var(--terra-light),var(--terra-muted),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.45s cubic-bezier(.22,.61,.36,1)}
+    .nav-logo:hover::after{transform:scaleX(1)}
+    .nav-links{display:flex;gap:2.5rem;list-style:none}
+    .nav-links a{font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;position:relative;transition:color 0.3s}
+    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:0.5px;background:var(--terra);transition:width 0.35s}
+    .nav-links a:hover{color:var(--terra)}.nav-links a:hover::after{width:100%}
+    @media(max-width:768px){nav{padding:1.25rem 1.5rem}.nav-links{display:none}.nav-logo{font-size:1.25rem}}
+
+    #hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:25%;left:-8%;width:52vw;height:52vw;border-radius:50%;background:radial-gradient(circle,var(--gold-glow) 0%,var(--gold-glow-2) 45%,transparent 70%);pointer-events:none;z-index:1;animation:breathe 8s ease-in-out infinite}
+    @keyframes breathe{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.14);opacity:1}}
+    .hero-index{position:absolute;top:50%;left:3.5rem;transform:translateY(-50%);font-family:var(--serif);font-size:.75rem;font-weight:300;color:var(--ink-3);letter-spacing:.1em;writing-mode:vertical-rl;opacity:.35;z-index:3}
+    .hero-text-panel{display:flex;flex-direction:column;justify-content:center;padding:0 4rem;position:relative;z-index:3}
+    .hero-name{margin-bottom:1.6rem;display:flex;align-items:baseline;gap:.6rem}
+    .hero-name-en,.hero-name-cn{font-weight:700;color:var(--ink);letter-spacing:.04em}
+    .hero-name-en{font-family:var(--serif);font-size:clamp(2.4rem,4.2vw,3.8rem)}
+    .hero-name-cn{font-family:var(--mincho);font-size:clamp(2.2rem,3.8vw,3.4rem)}
+    .hero-headline{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3rem);font-weight:400;font-style:italic;line-height:1.14;color:var(--ink);margin-bottom:2.2rem;max-width:22ch}
+    .hero-headline .accent{color:var(--terra);font-style:italic}
+    .hero-manifesto{font-family:var(--serif);font-size:clamp(.95rem,1.3vw,1.2rem);font-weight:300;font-style:italic;color:var(--ink-2);line-height:1.7;max-width:36ch;margin-bottom:2.8rem;padding-left:1.25rem;border-left:1.5px solid var(--terra-light)}
+    .hero-cta-group{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .btn-primary{display:inline-block;padding:.85rem 2rem;background:var(--terra);color:var(--cream);font-size:.75rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .3s,transform .2s}
+    .btn-primary:hover{background:var(--terra-light);transform:translateY(-1px)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;border-bottom:.5px solid var(--cream-border);padding-bottom:2px;transition:color .3s,border-color .3s}
+    .btn-ghost:hover{color:var(--terra);border-color:var(--terra)}
+    .btn-ghost .arrow{transition:transform .3s;display:inline-block}
+    .btn-ghost:hover .arrow{transform:translateX(4px)}
+    .hero-image-panel{position:relative;overflow:hidden;z-index:2}
+    .hero-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+    .hero-image-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--cream) 0%,transparent 20%);pointer-events:none;z-index:1}
+    .hero-scroll-hint{position:absolute;bottom:2.5rem;right:3.5rem;z-index:10;display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:.4}
+    .hero-scroll-hint span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);writing-mode:vertical-rl}
+    .scroll-line{width:.5px;height:40px;background:var(--ink-3);animation:scrollPulse 2.2s ease-in-out infinite}
+    @keyframes scrollPulse{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+    @media(max-width:768px){
+      #hero{grid-template-columns:1fr;grid-template-rows:1fr;min-height:100svh}
+      .hero-text-panel{grid-row:1;grid-column:1;padding:5rem 1.5rem 3rem;justify-content:center;z-index:3;background:linear-gradient(to right,rgba(248,243,236,.92) 0%,rgba(248,243,236,.52) 36%,rgba(248,243,236,.08) 72%,transparent 94%)}
+      .hero-image-panel{grid-row:1;grid-column:1;position:absolute;top:0;right:0;bottom:0;left:8%;width:auto;height:auto;z-index:0}
+      .hero-portrait{object-fit:contain;object-position:center center;background:var(--cream);opacity:.95}
+      .hero-image-overlay{background:linear-gradient(to right,rgba(248,243,236,.96) 0%,rgba(248,243,236,.55) 28%,rgba(248,243,236,.04) 68%,transparent 92%),linear-gradient(to top,var(--cream) 0%,rgba(248,243,236,.40) 16%,transparent 36%),linear-gradient(to bottom,var(--cream) 0%,rgba(248,243,236,.30) 12%,transparent 30%)}
+      .hero-glow{display:none}.hero-index{display:none}.hero-scroll-hint{bottom:1.5rem;right:1.5rem}
+      .hero-name-en{font-size:clamp(1.6rem,7vw,2.4rem)}.hero-name-cn{font-size:clamp(1.4rem,6vw,2rem)}
+      .hero-headline{font-size:clamp(1.3rem,5.5vw,1.8rem);margin-bottom:1.8rem}.hero-manifesto{font-size:.9rem;margin-bottom:2.4rem;max-width:30ch}
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 1 — INTRO BLOCK
+       ═══════════════════════════════════════════════════════════ */
+    #journey{position:relative;overflow:visible}
+    .intro-block{max-width:620px;margin:0 auto;padding:7rem 2rem 5rem;text-align:left}
+    .intro-block .intro-name{font-size:1.35rem;font-weight:700;color:var(--ink);letter-spacing:.04em;margin-bottom:.3rem}
+    .intro-block .intro-name .intro-name-en{font-family:var(--serif);font-weight:700}
+    .intro-block .intro-name .intro-name-cn{font-family:var(--mincho);font-weight:700}
+    .intro-block .intro-subtitle{font-family:var(--serif);font-size:.8rem;font-style:italic;font-weight:400;color:var(--terra-light);letter-spacing:.1em;margin-bottom:2.4rem;text-transform:uppercase}
+    .intro-block .intro-body{font-size:1.1rem;line-height:2;color:var(--ink-2);padding-left:1.6rem;border-left:1px solid var(--terra-light)}
+    .intro-block .intro-body p{margin-bottom:.8rem}
+    .intro-block .intro-body .intro-lead{font-weight:400;color:var(--ink);font-size:1.05rem;margin-top:1.2rem;font-style:italic;font-family:var(--serif)}
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 1 — PHASE WRAPPERS (each holds its own center-line SVG)
+       ═══════════════════════════════════════════════════════════ */
+    .phase{position:relative;padding:5rem 3rem;transition:background-color 0.8s ease;overflow:hidden}
+    .phase-header{text-align:center;margin-bottom:3.5rem}
+    .phase-header .phase-number{font-family:var(--serif);font-size:.7rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.5rem}
+    .phase-header .phase-title{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:500;font-style:italic;color:var(--ink);letter-spacing:.04em}
+    .phase-header .phase-subtitle{font-size:.75rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-top:.4rem}
+
+    /* Center-line SVG: absolutely positioned inside each .phase,
+       covers the full height of that phase only */
+    .phase > .core-svg{
+      position:absolute;top:0;left:50%;
+      transform:translateX(-50%);
+      width:30px;height:100%;
+      pointer-events:none;z-index:0;
+      transition:opacity 0.7s ease;overflow:visible;
+    }
+    .phase > .core-svg{opacity:1}
+    .phase > .core-svg .cl-dashed{stroke-dasharray:6 8}
+    .phase > .core-svg .cl-faint{stroke-dasharray:4 14}
+    .phase > .core-svg.p3 .cl-glow{filter:url(#glow-filter)}
+    .phase > .core-svg.p4{opacity:.5}
+    .phase > .core-svg.p4 .cl-helix-a{animation:helixFlow 6s ease-in-out infinite}
+    .phase > .core-svg.p4 .cl-helix-b{animation:helixFlow 6s ease-in-out .3s infinite}
+    @keyframes helixFlow{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-200}}
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 1 — NARRATION
+       ═══════════════════════════════════════════════════════════ */
+    .narration{max-width:520px;margin:3.5rem auto;text-align:center;font-family:var(--serif);font-size:.82rem;font-style:italic;line-height:1.8;color:var(--ink-3);letter-spacing:.03em;padding:0 1.5rem}
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 1 — TIMELINE YEAR GROUP (no visual cards)
+       ═══════════════════════════════════════════════════════════ */
+    .timeline-year-group{display:flex;align-items:flex-start;justify-content:center;position:relative;margin:3rem 0;min-height:2rem}
+    .timeline-year-group:first-child{margin-top:1.5rem}
+
+    /* Left entry (红尘) — right-aligned */
+    .entry.entry-left{flex:0 0 38%;text-align:right;padding-right:3.5rem;position:relative;z-index:2}
+    .entry.entry-left .entry-body{display:inline-block;text-align:right;max-width:340px;background:var(--cream);padding:.3rem .6rem;border-radius:2px}
+    .entry.entry-left .connector-line{position:absolute;right:0;top:1.1rem;width:2rem;height:0.5px;background:var(--phase1-line);opacity:.4}
+
+    /* Right entry (内在) — left-aligned */
+    .entry.entry-right{flex:0 0 38%;text-align:left;padding-left:3.5rem;position:relative;z-index:2}
+    .entry.entry-right .entry-body{display:inline-block;text-align:left;max-width:340px;background:var(--cream);padding:.3rem .6rem;border-radius:2px}
+    .entry.entry-right .connector-line{position:absolute;left:0;top:1.1rem;width:2rem;height:0.5px;background:var(--phase1-line);opacity:.4}
+
+    /* Year marker — centered on the timeline */
+    .year-marker{position:absolute;left:50%;transform:translateX(-50%);top:0;z-index:2}
+    .year-marker span{display:inline-flex;align-items:center;justify-content:center;min-width:2.8rem;height:1.6rem;font-family:var(--serif);font-size:.78rem;font-weight:500;color:var(--ink-2);letter-spacing:.06em;background:var(--cream);border:0.5px solid var(--cream-border);border-radius:1px;padding:0 .5rem}
+
+    /* Entry typography */
+    .entry-title{font-size:1.05rem;font-weight:500;color:var(--ink);line-height:1.35;margin-bottom:.5rem;letter-spacing:.02em}
+    .entry.entry-left .entry-title{color:var(--ink-2)}
+    .entry.entry-right .entry-title{color:var(--terra)}
+    .entry-detail{font-size:.82rem;font-weight:300;color:var(--ink-2);line-height:1.75;letter-spacing:.01em}
+    .entry-detail .sub{display:block;margin-top:.2rem;font-size:.78rem}
+    .entry.entry-left .entry-detail .sub{color:#A89788}
+    .entry.entry-right .entry-detail .sub{color:#B5A28A}
+    .entry-accent{color:var(--terra);font-weight:500}
+    .entry.entry-left .entry-accent{color:#4A3528;font-weight:600}
+    .entry.entry-right .entry-accent{color:#6D3820;font-weight:600}
+    .entry.entry-left .entry-title{color:#5C4F44}
+    .entry.entry-right .entry-title{color:#7A4A2E}
+    .entry.entry-left .entry-detail{color:#8C7B6E}
+    .entry.entry-right .entry-detail{color:#9B846A}
+
+    /* Empty slot (when only one side has content) */
+    .entry.entry-empty{flex:0 0 38%;min-height:1px}
+
+
+    /* ═══════════════════════════════════════════════════════════
+       QUOTE BLOCK (Phase 4)
+       ═══════════════════════════════════════════════════════════ */
+    .phase-quote{max-width:580px;margin:3rem auto;text-align:center;font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.45rem);font-style:italic;font-weight:400;line-height:1.55;color:var(--terra);letter-spacing:.03em;padding:0 1.5rem}
+
+    /* ═══════════════════════════════════════════════════════════
+       SCROLL-REVEAL ANIMATIONS
+       ═══════════════════════════════════════════════════════════ */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s cubic-bezier(.22,.61,.36,1),transform 0.8s cubic-bezier(.22,.61,.36,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 2 — THE MANIFESTO
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Section wrapper */
+    #narrative{
+      background:var(--cream);
+      overflow:hidden;
+      border-top:0.5px solid var(--cream-border);
+    }
+
+    /* ── Fixed header (sticky pinned title) ── */
+    .mf-header{
+      position:sticky;top:0;z-index:20;
+      background:var(--cream);
+      padding:4.5rem 5vw 2.5rem;
+      border-bottom:0.5px solid var(--cream-border);
+    }
+    .mf-header-eyebrow{
+      font-family:var(--sans);font-size:.65rem;font-weight:400;
+      letter-spacing:.28em;text-transform:uppercase;color:var(--ink-3);
+      margin-bottom:1rem;
+    }
+    .mf-header-title{
+      font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.6rem);
+      font-weight:300;font-style:italic;color:var(--ink);
+      letter-spacing:.02em;line-height:1.12;
+      max-width:720px;
+    }
+    .mf-header-sub{
+      font-family:var(--sans);font-size:.78rem;font-weight:300;
+      letter-spacing:.15em;text-transform:uppercase;
+      color:var(--ink-3);margin-top:1rem;
+    }
+
+    /* ── Scroll blocks wrapper ── */
+    .mf-scroll{
+      max-width:900px;margin:0 auto;
+      padding:0 5vw 10rem;
+    }
+
+    /* ── Single block ── */
+    .mf-block{
+      padding:7rem 0 5rem;
+      border-bottom:0.5px solid var(--cream-border);
+      position:relative;
+    }
+    .mf-block:last-child{border-bottom:none;}
+
+    /* Block index number */
+    .mf-index{
+      font-family:var(--serif);font-size:.7rem;font-weight:300;
+      letter-spacing:.22em;color:var(--ink-3);
+      margin-bottom:3.5rem;display:block;
+      text-transform:uppercase;
+    }
+
+    /* Pull quote */
+    .mf-quote{
+      font-family:var(--serif);
+      font-size:clamp(1.55rem,2.8vw,2.3rem);
+      font-weight:400;font-style:italic;
+      color:var(--ink);line-height:1.25;
+      letter-spacing:.015em;
+      margin-bottom:3.5rem;
+      max-width:680px;
+      position:relative;padding-left:1.6rem;
+    }
+    .mf-quote::before{
+      content:'';
+      position:absolute;left:0;top:.15em;
+      width:2px;height:calc(100% - .3em);
+      background:var(--terra);opacity:.45;
+    }
+
+    /* Body copy */
+    .mf-body{
+      font-family:var(--mincho);font-size:clamp(.85rem,1.1vw,.98rem);
+      font-weight:300;line-height:2.05;
+      color:var(--ink-2);letter-spacing:.04em;
+      max-width:640px;
+    }
+    .mf-body p{margin-bottom:1.6em}
+    .mf-body p:last-child{margin-bottom:0}
+    .mf-body .en{
+      font-family:var(--serif);font-size:1.08em;font-style:italic;
+      color:var(--ink);
+    }
+    .mf-body .bold{font-weight:500;color:var(--ink)}
+    .mf-body .accent{color:var(--terra);font-weight:500}
+
+    /* UNICHE callout — centered, accent color */
+    .mf-uniche{
+      display:block;
+      text-align:center;
+      font-family:var(--serif);
+      font-size:clamp(1.4rem,2.6vw,2rem);
+      font-weight:400;font-style:italic;
+      color:var(--terra);
+      letter-spacing:.06em;
+      margin:2.2rem auto;
+    }
+
+    /* Closing coda line */
+    .mf-coda{
+      font-family:var(--serif);font-size:clamp(1rem,1.6vw,1.3rem);
+      font-style:italic;font-weight:400;color:var(--ink-3);
+      letter-spacing:.05em;margin-top:4.5rem;text-align:center;
+      display:block;
+    }
+
+    /* ── Inline rule divider ── */
+    .mf-rule{
+      width:2.4rem;height:0.5px;
+      background:var(--terra);opacity:.35;
+      display:block;margin:3rem 0;
+    }
+
+    /* ── Mobile ── */
+    @media(max-width:680px){
+      .mf-header{padding:3.5rem 1.5rem 2rem}
+      .mf-scroll{padding:0 1.5rem 7rem}
+      .mf-block{padding:5rem 0 4rem}
+      .mf-quote{font-size:1.45rem;padding-left:1.2rem}
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 3 — THE ARSENAL (Bento Box Grid)
+       ═══════════════════════════════════════════════════════════ */
+
+    #toolbox{
+      background:var(--cream);
+      border-top:0.5px solid var(--cream-border);
+      padding:6rem 4vw 8rem;
+    }
+
+    /* Section header */
+    .ar-header{
+      text-align:center;
+      margin-bottom:4.5rem;
+    }
+    .ar-header-eyebrow{
+      font-family:var(--sans);font-size:.65rem;font-weight:400;
+      letter-spacing:.28em;text-transform:uppercase;color:var(--ink-3);
+      margin-bottom:1.2rem;display:block;
+    }
+    .ar-header-title{
+      font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);
+      font-weight:300;color:var(--ink);letter-spacing:.04em;
+      margin-bottom:.8rem;
+    }
+    .ar-header-sub{
+      font-family:var(--mincho);font-size:clamp(.85rem,1.1vw,.95rem);
+      font-weight:300;color:var(--ink-3);letter-spacing:.08em;
+    }
+
+    /* ── Bento Grid container ── */
+    .ar-grid{
+      max-width:1160px;margin:0 auto;
+      display:grid;
+      /* Left col = Architect, Right col = Alchemist */
+      grid-template-columns:1fr 1fr;
+      /* Row 1: col heads | Row 2-4: cards | Last row: impact full-width */
+      grid-template-rows:auto;
+      gap:1px; /* hairline gap becomes border color */
+      background:var(--cream-border);
+      border:1px solid var(--cream-border);
+      border-radius:16px;
+      overflow:hidden;
+    }
+    /* Right Alchemist tall card: spans rows 2-4 (below col-head + 3 left cards) */
+    .ar-card.ar-tall{
+      grid-column:2;
+      grid-row:2 / span 3;
+    }
+    .ar-card.ar-right{grid-column:2;grid-row:5}
+    /* Architect Card 3 spans rows 4-5 to fill left-column gap */
+    .ar-card.ar-span2{grid-row:4 / span 2}
+
+    /* ── Column headings row ── */
+    .ar-col-head{
+      background:var(--cream-deep);
+      padding:2rem 2.4rem 1.8rem;
+      display:flex;flex-direction:column;gap:.5rem;
+    }
+    .ar-col-head-label{
+      font-family:var(--sans);font-size:.62rem;font-weight:400;
+      letter-spacing:.26em;text-transform:uppercase;color:var(--ink-3);
+    }
+    .ar-col-head-title{
+      font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.7rem);
+      font-weight:400;font-style:italic;color:var(--ink);
+    }
+    /* Decorative geometric icon in col head */
+    .ar-col-icon{
+      margin-top:auto;
+      padding-top:1.2rem;
+      opacity:.18;
+    }
+
+    /* ── Generic card ── */
+    .ar-card{
+      background:rgba(248,243,236,0.82);
+      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      padding:2rem 2.4rem 2.2rem;
+      position:relative;overflow:hidden;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .ar-card:hover{background:rgba(248,243,236,0.96)}
+    .ar-card-title{
+      font-family:var(--sans);font-size:.88rem;font-weight:500;
+      letter-spacing:.04em;color:var(--ink);
+      margin-bottom:1.1rem;line-height:1.3;
+    }
+    .ar-card-title .ar-tag{
+      display:inline-block;
+      font-size:.58rem;font-weight:400;letter-spacing:.18em;
+      text-transform:uppercase;color:var(--ink-3);
+      margin-left:.5rem;vertical-align:middle;
+    }
+
+    /* Bullet list */
+    .ar-bullets{
+      list-style:none;
+      display:flex;flex-direction:column;gap:.65rem;
+    }
+    .ar-bullets li{
+      font-family:var(--mincho);font-size:.82rem;font-weight:300;
+      line-height:1.7;color:var(--ink-2);
+      padding-left:1rem;position:relative;
+    }
+    .ar-bullets li::before{
+      content:'–';
+      position:absolute;left:0;top:.05em;
+      color:var(--terra);opacity:.5;
+      font-family:var(--serif);
+    }
+
+    /* Accent / highlight keyword */
+    .ar-hl{
+      color:var(--terra);font-weight:500;
+    }
+    /* Subtle glow highlight */
+    .ar-hl-bg{
+      background:rgba(139,74,43,0.09);
+      color:var(--terra-deep);font-weight:500;
+      padding:.05em .3em;border-radius:2px;
+    }
+
+    /* ── Card size variants (column positioning handled above in .ar-grid rule) ── */
+    /* Certification badge row inside a card */
+    .ar-cert{
+      display:inline-flex;align-items:center;gap:.4rem;
+      background:rgba(139,74,43,0.06);border:0.5px solid rgba(139,74,43,0.18);
+      border-radius:4px;padding:.3rem .7rem;margin:.4rem .2rem 0 0;
+      font-family:var(--sans);font-size:.68rem;font-weight:400;
+      letter-spacing:.06em;color:var(--terra-deep);
+    }
+
+    /* ── Photo placeholder grid (Alchemist column) ── */
+    .ar-photo-grid{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:6px;margin-top:1.2rem;
+    }
+    .ar-photo-slot{
+      aspect-ratio:4/3;
+      background:var(--cream-deep);
+      border-radius:4px;
+      position:relative;overflow:hidden;
+    }
+    .ar-photo-slot img{
+      position:absolute;inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+    .ar-photo-slot-label{
+      font-family:var(--sans);font-size:.56rem;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--ink-3);text-align:center;
+      padding:.3rem;line-height:1.4;
+    }
+    /* Wave decoration on photo slot */
+    .ar-photo-slot::before{
+      content:'';
+      position:absolute;bottom:0;left:0;right:0;height:30%;
+      background:linear-gradient(to top,rgba(139,74,43,0.05),transparent);
+    }
+
+    /* ── Impact row (full width) ── */
+    .ar-impact-row{
+      grid-column:1/-1;
+      background:var(--cream-deep);
+      padding:2.8rem 2.4rem;
+    }
+    .ar-impact-head{
+      display:flex;align-items:baseline;gap:1.2rem;margin-bottom:2rem;
+    }
+    .ar-impact-head-title{
+      font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.45rem);
+      font-weight:400;font-style:italic;color:var(--ink);
+    }
+    .ar-impact-head-note{
+      font-family:var(--sans);font-size:.62rem;letter-spacing:.16em;
+      text-transform:uppercase;color:var(--ink-3);
+    }
+    .ar-cases{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:var(--cream-border);
+      border:0.5px solid var(--cream-border);
+      border-radius:8px;overflow:hidden;
+    }
+    .ar-case{
+      background:rgba(248,243,236,0.72);
+      backdrop-filter:blur(6px);
+      padding:1.6rem 1.4rem;
+      display:flex;flex-direction:column;gap:.7rem;
+    }
+    .ar-case-tag{
+      font-family:var(--sans);font-size:.6rem;font-weight:500;
+      letter-spacing:.18em;text-transform:uppercase;
+      color:var(--terra);display:block;margin-bottom:.1rem;
+    }
+    .ar-case-desc{
+      font-family:var(--mincho);font-size:.8rem;font-weight:300;
+      line-height:1.75;color:var(--ink-2);
+    }
+    .ar-case-result{
+      font-family:var(--serif);font-size:.88rem;font-style:italic;
+      font-weight:400;color:var(--ink);margin-top:auto;
+    }
+
+    /* ── Mobile responsive ── */
+    @media(max-width:860px){
+      #toolbox{padding:3rem 1.2rem 5rem}
+      .ar-header{margin-bottom:2.5rem}
+      .ar-grid{border-radius:10px}
+      .ar-card{padding:1.2rem 1rem 1.4rem}
+      .ar-col-head{padding:1.2rem 1rem 1.2rem}
+      .ar-impact-row{padding:1.6rem 1rem}
+      .ar-card-title{font-size:.78rem}
+      .ar-card-desc,.ar-bullets li{font-size:.7rem}
+      .ar-hl{font-size:.68rem}
+      .ar-cert{font-size:.6rem;padding:.2rem .5rem}
+    }
+    @media(max-width:480px){
+      .ar-card{padding:1rem .7rem 1.2rem}
+      .ar-col-head{padding:1rem .7rem 1rem}
+      .ar-impact-row{padding:1.2rem .7rem}
+      .ar-card-title{font-size:.72rem}
+      .ar-card-desc,.ar-bullets li{font-size:.64rem}
+      .ar-cases{grid-template-columns:1fr 1fr}
+      .ar-photo-grid{grid-template-columns:1fr}
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       MODULE 4 — THE VISION · OLYNX UNIVERSE
+       ═══════════════════════════════════════════════════════════ */
+    #olynx{
+      position:relative;
+      background:linear-gradient(180deg,var(--cream) 0%,#281e42 28%,var(--cosmic-mid) 55%,var(--cosmic-deep) 100%);
+      padding:10rem 0 0;
+      overflow:hidden;
+    }
+
+    /* ── Cosmic breathing orb ── */
+    .vision-orb{
+      position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);
+      width:75vw;max-width:720px;height:75vw;max-height:720px;
+      border-radius:50%;
+      background:radial-gradient(circle at center,
+        rgba(210,170,110,0.16) 0%,
+        rgba(180,130,90,0.06) 28%,
+        rgba(120,80,170,0.05) 52%,
+        rgba(60,40,100,0.03) 72%,
+        transparent 100%);
+      pointer-events:none;z-index:0;
+      animation:orb-breathe 8s ease-in-out infinite;
+    }
+    @keyframes orb-breathe{
+      0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}
+      50%{transform:translate(-50%,-50%) scale(1.16);opacity:1}
+    }
+
+    /* Second subtle orb — deeper and smaller */
+    .vision-orb-2{
+      position:absolute;top:72%;left:22%;transform:translate(-50%,-50%);
+      width:40vw;max-width:380px;height:40vw;max-height:380px;
+      border-radius:50%;
+      background:radial-gradient(circle at center,
+        rgba(176,122,161,0.1) 0%,rgba(176,122,161,0.03) 40%,transparent 70%);
+      pointer-events:none;z-index:0;
+      animation:orb-breathe-2 10s ease-in-out infinite;
+    }
+    @keyframes orb-breathe-2{
+      0%,100%{transform:translate(-50%,-50%) scale(.9);opacity:.3}
+      50%{transform:translate(-50%,-50%) scale(1.18);opacity:.75}
+    }
+
+    /* ── Section header ── */
+    .vision-header{
+      text-align:center;max-width:720px;margin:0 auto 6rem;
+      position:relative;z-index:1;padding:0 1.5rem;
+    }
+    .vision-overline{
+      font-family:var(--sans);font-size:.66rem;font-weight:400;
+      letter-spacing:.22em;text-transform:uppercase;
+      color:var(--phase4-b);margin-bottom:1.2rem;
+    }
+    .vision-title{
+      font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.4rem);
+      font-weight:300;font-style:italic;color:var(--cosmic-text);
+      line-height:1.12;letter-spacing:.01em;
+    }
+    .vision-subtitle{
+      font-family:var(--mincho);font-size:.88rem;font-weight:300;
+      color:var(--cosmic-muted);margin-top:1rem;letter-spacing:.04em;
+    }
+
+    /* ── The Shift — intro ── */
+    .vision-shift{
+      max-width:660px;margin:0 auto 7rem;text-align:center;
+      position:relative;z-index:1;padding:0 1.5rem;
+    }
+    .vision-shift p{
+      font-family:var(--mincho);font-size:.88rem;font-weight:300;
+      line-height:2.1;color:#b0a8a0;margin-bottom:2rem;
+    }
+    .vision-shift .v-em{
+      color:var(--cosmic-text);font-weight:400;
+    }
+    .vision-shift .v-em-gold{
+      color:var(--star);font-weight:500;
+    }
+
+    /* ── The Incubator — dual glass cards ── */
+    .vision-incubator{
+      display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+      max-width:1000px;margin:0 auto 7rem;padding:0 2rem;
+      position:relative;z-index:1;
+    }
+    .v-card{
+      background:rgba(255,250,245,0.025);
+      backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+      border:.5px solid var(--cosmic-border);
+      border-radius:12px;padding:3rem 2.6rem;
+      position:relative;overflow:hidden;
+      transition:background .5s,border-color .5s,box-shadow .5s;
+    }
+    .v-card:hover{
+      background:rgba(255,250,245,0.04);
+      border-color:rgba(255,255,255,0.12);
+      box-shadow:0 0 60px rgba(210,170,110,0.04);
+    }
+    .v-card::before{
+      content:'';position:absolute;inset:0;
+      pointer-events:none;
+    }
+    /* Left: Spiritual Entrepreneur — warm gold tone */
+    .v-card-left{
+      background:rgba(226,194,112,0.045);
+      border-color:rgba(226,194,112,0.12);
+    }
+    .v-card-left:hover{
+      background:rgba(226,194,112,0.075);
+      border-color:rgba(226,194,112,0.25);
+      box-shadow:0 0 60px rgba(226,194,112,0.08);
+    }
+    .v-card-left::before{
+      background:radial-gradient(ellipse at top left,
+        rgba(226,194,112,0.08) 0%,rgba(226,194,112,0.03) 40%,transparent 70%);
+    }
+    /* Right: Spiritual Artist — cool purple tone */
+    .v-card-right{
+      background:rgba(176,122,161,0.045);
+      border-color:rgba(176,122,161,0.12);
+    }
+    .v-card-right:hover{
+      background:rgba(176,122,161,0.075);
+      border-color:rgba(176,122,161,0.25);
+      box-shadow:0 0 60px rgba(176,122,161,0.08);
+    }
+    .v-card-right::before{
+      background:radial-gradient(ellipse at top right,
+        rgba(176,122,161,0.08) 0%,rgba(176,122,161,0.03) 40%,transparent 70%);
+    }
+    .v-card-head{
+      font-family:var(--mincho);font-size:1.08rem;font-weight:500;
+      color:var(--cosmic-text);line-height:1.5;margin-bottom:1.2rem;
+    }
+    .v-card-head .v-highlight{
+      font-weight:700;color:var(--star);
+    }
+    .v-card-body{
+      font-family:var(--mincho);font-size:.8rem;font-weight:300;
+      line-height:2;color:#9a9288;
+    }
+    .v-card-body .v-em-gold{
+      color:var(--star);font-weight:400;
+    }
+
+    /* ── The Engine ── */
+    .vision-engine{
+      max-width:700px;margin:0 auto 6rem;text-align:center;
+      position:relative;z-index:1;padding:0 1.5rem;
+    }
+    .vision-engine-label{
+      font-family:var(--sans);font-size:.62rem;
+      letter-spacing:.2em;text-transform:uppercase;
+      color:var(--phase4-b);margin-bottom:.5rem;
+    }
+    .vision-engine-divider{
+      width:40px;height:.5px;
+      background:linear-gradient(to right,transparent,rgba(176,122,161,.35),transparent);
+      margin:0 auto 3rem;
+    }
+    .vision-engine-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:0;
+      border-top:.5px solid var(--cosmic-border);
+      border-bottom:.5px solid var(--cosmic-border);
+      padding:3.5rem 0;margin-top:1rem;
+    }
+    .v-engine-item{padding:1.2rem 2.4rem;position:relative}
+    .v-engine-item:first-child{
+      border-right:.5px solid rgba(255,255,255,.05);
+    }
+    .v-engine-name{
+      font-family:var(--serif);font-size:1.45rem;font-weight:300;
+      font-style:italic;color:var(--cosmic-text);
+      letter-spacing:.02em;margin-bottom:.4rem;
+    }
+    .v-engine-name .glow-o{
+      color:var(--cosmic-purple);font-weight:600;
+      text-shadow:0 0 22px rgba(176,122,161,.5),0 0 50px rgba(176,122,161,.2);
+    }
+    .v-engine-name .glow-x{
+      color:var(--star);font-weight:600;
+      text-shadow:0 0 22px rgba(226,194,112,.5),0 0 50px rgba(226,194,112,.2);
+    }
+    .v-engine-sub{
+      font-family:var(--mincho);font-size:.8rem;font-weight:400;
+      color:#8a8298;margin-bottom:.8rem;letter-spacing:.02em;
+    }
+    .v-engine-desc{
+      font-family:var(--mincho);font-size:.76rem;font-weight:300;
+      line-height:1.9;color:#8a8078;
+    }
+
+    /* ── CTA ── */
+    .vision-cta{
+      text-align:center;max-width:640px;margin:0 auto 0;
+      position:relative;z-index:1;padding:0 1.5rem;
+    }
+    .vision-cta-text{
+      font-family:var(--mincho);font-size:.88rem;font-weight:300;
+      line-height:2;color:#b0a8a0;margin-bottom:3rem;
+    }
+    .vision-cta-buttons{
+      display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;
+      margin-bottom:2rem;
+    }
+    .v-btn{
+      font-family:var(--sans);font-size:.7rem;font-weight:400;
+      letter-spacing:.13em;text-transform:uppercase;
+      padding:.85rem 2rem;border-radius:4px;
+      cursor:pointer;transition:all .4s ease;
+      text-decoration:none;display:inline-block;
+    }
+    .v-btn-primary{
+      background:rgba(226,194,112,.1);border:.5px solid rgba(226,194,112,.3);
+      color:var(--star);
+    }
+    .v-btn-primary:hover{
+      background:rgba(226,194,112,.18);
+      border-color:rgba(226,194,112,.5);
+      box-shadow:0 0 40px rgba(226,194,112,.12);
+    }
+    .v-btn-secondary{
+      background:transparent;border:.5px solid rgba(255,255,255,.12);
+      color:#c4bcb4;
+    }
+    .v-btn-secondary:hover{
+      border-color:rgba(255,255,255,.28);
+      background:rgba(255,255,255,.03);
+    }
+    .vision-spacer{height:10rem}
+
+    /* ── QR Modal ── */
+    .qr-modal-overlay{
+      position:fixed;inset:0;z-index:9999;
+      background:rgba(10,6,24,.88);
+      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;visibility:hidden;
+      transition:opacity .35s ease,visibility .35s ease;
+    }
+    .qr-modal-overlay.active{opacity:1;visibility:visible}
+    .qr-modal{
+      background:linear-gradient(145deg,rgba(30,22,58,.95),rgba(22,16,48,.95));
+      border:.5px solid var(--cosmic-border);
+      border-radius:16px;padding:2.8rem 2rem 2rem;
+      text-align:center;max-width:380px;width:90vw;
+      position:relative;
+      box-shadow:0 0 80px rgba(176,122,161,.08),0 0 120px rgba(226,194,112,.04);
+    }
+    .qr-modal-close{
+      position:absolute;top:1rem;right:1.2rem;
+      background:none;border:none;
+      font-size:1.3rem;color:var(--cosmic-muted);
+      cursor:pointer;transition:color .3s;
+      width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+      border-radius:50%;
+    }
+    .qr-modal-close:hover{color:var(--cosmic-text);background:rgba(255,255,255,.05)}
+    .qr-modal-title{
+      font-family:var(--serif);font-size:1.3rem;font-weight:300;
+      font-style:italic;color:var(--cosmic-text);
+      margin-bottom:.8rem;
+    }
+    .qr-modal-sub{
+      font-family:var(--mincho);font-size:.8rem;font-weight:300;
+      color:var(--cosmic-muted);margin-bottom:1.8rem;
+    }
+    .qr-modal img{
+      width:100%;max-width:260px;border-radius:8px;
+      border:1px solid var(--cosmic-border);
+    }
+
+    /* ── Module 4 Mobile ── */
+    @media(max-width:860px){
+      #olynx{padding:7rem 0 0}
+      .vision-header{margin-bottom:4rem}
+      .vision-incubator{grid-template-columns:1fr;gap:1.5rem;padding:0 1.2rem}
+      .v-card{padding:2.2rem 1.6rem}
+      .vision-shift{margin-bottom:5rem}
+      .vision-engine-grid{grid-template-columns:1fr;padding:2.5rem 0}
+      .v-engine-item:first-child{border-right:none;border-bottom:.5px solid var(--cosmic-border)}
+      .v-engine-item{padding:1.2rem 1rem}
+      .vision-cta-buttons{gap:1rem}
+      .v-btn{padding:.75rem 1.6rem;font-size:.65rem}
+      .vision-spacer{height:6rem}
+    }
+    @media(max-width:480px){
+      .vision-title{font-size:1.7rem}
+      .vision-shift p{font-size:.8rem;line-height:1.95}
+      .v-card-head{font-size:.95rem}
+      .v-card-body{font-size:.74rem;line-height:1.85}
+      .vision-engine-name{font-size:1.2rem}
+      .vision-engine-desc{font-size:.7rem}
+      .vision-cta-text{font-size:.8rem}
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════ */
+    footer{padding:2.5rem 4rem;border-top:0.5px solid var(--cream-border);display:flex;justify-content:center;align-items:center}
+    footer p{font-size:.7rem;letter-spacing:.1em;color:var(--ink-3)}
+
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE — MODULE 1
+       ═══════════════════════════════════════════════════════════ */
+    @media(max-width:768px){
+      .intro-block{padding:5rem 1.5rem 3.5rem}
+      .intro-block .intro-body{font-size:.95rem;padding-left:1rem;line-height:1.85}
+      .phase{padding:3.5rem 1rem}
+      .phase-header .phase-title{font-size:1.4rem}
+      .narration{font-size:.75rem;margin:2.5rem auto;padding:0 1rem}
+      .phase-quote{font-size:1rem;margin:2rem auto}
+
+      .phase > .core-svg{width:20px}
+
+      .timeline-year-group{
+        display:flex;flex-direction:row;align-items:flex-start;
+        justify-content:center;margin:2.5rem 0;padding-top:2.2rem;
+        position:relative;
+      }
+      .timeline-year-group:first-child{margin-top:1rem}
+
+      .entry.entry-left{flex:0 0 42%;text-align:right;padding-right:1.2rem;position:relative}
+      .entry.entry-right{flex:0 0 42%;text-align:left;padding-left:1.2rem;position:relative}
+      .entry.entry-left .entry-body,.entry.entry-right .entry-body{max-width:100%}
+      .entry.entry-left .entry-body{text-align:right}
+      .entry.entry-right .entry-body{text-align:left}
+
+      .entry.entry-left .connector-line{right:0;left:auto;top:.55rem;width:0.6rem;height:0.5px}
+      .entry.entry-right .connector-line{left:0;right:auto;top:.55rem;width:0.6rem;height:0.5px}
+
+      .year-marker{left:50%;transform:translateX(-50%);top:0}
+      .year-marker span{font-size:.65rem;min-width:2.2rem;height:1.3rem;padding:0 .35rem}
+
+      .entry-title{font-size:.78rem;line-height:1.3;margin-bottom:.3rem}
+      .entry-detail{font-size:.7rem;line-height:1.6}
+      .entry-detail .sub{font-size:.68rem;margin-top:.15rem}
+
+      .entry-empty{flex:0 0 42%;min-height:1px}
+      footer{padding:2rem 1.5rem}
+    }
+
+    /* SVG filter definition (hidden) */
+    .svg-defs{position:absolute;width:0;height:0}
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="main-nav" role="navigation" aria-label="主导航">
+    <a href="#hero" class="nav-logo">Syeen<span class="nav-logo-mark">Lin</span></a>
+    <ul class="nav-links">
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#narrative">Narrative</a></li>
+      <li><a href="#toolbox">Toolbox</a></li>
+      <li><a href="#olynx">Olynx</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" aria-label="Hero — 个人数字名片">
+    <h1 class="visually-hidden">Syeen 林熹嵘 — To Empower More Individuals from Within</h1>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <span class="hero-index" aria-hidden="true">00 — Intro</span>
+    <div class="hero-text-panel">
+      <div class="hero-name">
+        <span class="hero-name-en">Syeen</span>
+        <span class="hero-name-cn">林熹嵘</span>
+      </div>
+      <h2 class="hero-headline serif">To empower more individuals<br /><span class="accent">from within.</span></h2>
+      <blockquote class="hero-manifesto serif">"Most people inherit their operating system.<br />I chose to build a new one — for myself,<br />and eventually, for a generation."</blockquote>
+      <div class="hero-cta-group">
+        <a href="#journey" class="btn-primary">探索我的故事</a>
+        <a href="#olynx" class="btn-ghost">愿景 VISION<span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="hero-image-panel" role="img" aria-label="Syeen 林熹嵘 人像">
+      <img src="portrait-1.jpg" class="hero-portrait" alt="Syeen Portrait" />
+      <div class="hero-image-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MODULE 1 : JOURNEY
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="journey" aria-label="Module 1 — Journey">
+
+    <!-- ── SVG filter definitions (shared) ── -->
+    <svg class="svg-defs" aria-hidden="true">
+      <defs>
+        <filter id="glow-filter" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- ── Personal Intro ── -->
+    <div class="intro-block reveal">
+      <div class="intro-name">
+        <span class="intro-name-en">Syeen</span>
+        <span class="intro-name-cn">林熹嵘</span>
+      </div>
+      <div class="intro-subtitle">Alchemist &amp; System Architect</div>
+      <div class="intro-body">
+        <p>你好，我是 Syeen，一个对真理和爱有着极致追求的地球游戏玩家。</p>
+        <p>拿过一点世俗结果，做过很多内在探索，经历了矫枉过正，而后在真实的世界开始创造。</p>
+        <p class="intro-lead">这是我的旅程：</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PHASE 1: 线性人生
+         ══════════════════════════════════════ -->
+    <div class="phase phase-1" id="phase-1">
+
+      <!-- Phase1: 世俗实直线, 粗3, 灰, 静态 -->
+      <svg class="core-svg p1 active" preserveAspectRatio="none" viewBox="0 0 30 600" aria-hidden="true">
+        <line x1="15" y1="120" x2="15" y2="600" stroke="#8C8A86" stroke-width="3" />
+      </svg>
+      <div class="phase-header reveal">
+        <div class="phase-number">Phase 1</div>
+        <h3 class="phase-title">线性人生</h3>
+        <div class="phase-subtitle">Linear Auto-run</div>
+      </div>
+
+      <div class="narration reveal">单向度的世界：学习、考试、工作、赚钱。<br />但更广阔的世界带来了冲击，自我诘问的种子开始在夹缝中发芽。</div>
+
+      <!-- 2013: 红尘线 (left) + 内在线 (right) -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-left">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">考入<span class="entry-accent">北京大学</span></h4>
+            <p class="entry-detail">经济学院，主修金融学<br /><span class="sub">在校期间选修多门数学系、计算机系课程</span><span class="sub">四年平均 GPA 3.75 / 4.00</span><span class="sub">单学期最高 GPA（大三）3.95 / 4.00</span></p>
+          </div>
+        </div>
+        <div class="year-marker"><span>2013</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">首次接触 &amp; 学习<span class="entry-accent">冥想</span></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2015: 内在线 only (right) -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-empty"></div>
+        <div class="year-marker"><span>2015</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">开始练习<span class="entry-accent">瑜伽</span></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="narration reveal">伴随着从象牙塔窥见真实世界的文化冲击，我陷入抑郁与存在主义叩问：<br />"如果谁都能走这条路，那我存在的意义是什么？<br />到底什么是属于我的「<span class="entry-accent">道</span>」？"</div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PHASE 2: 矩阵里的内在萌芽
+         ══════════════════════════════════════ -->
+    <div class="phase phase-2" id="phase-2">
+
+      <!-- Phase2: 世俗实直线(粗3灰) + 内在虚曲线(粗1粉紫), 静态 -->
+      <svg class="core-svg p2" preserveAspectRatio="none" viewBox="0 0 30 750" aria-hidden="true">
+        <line x1="15" y1="100" x2="15" y2="750" stroke="#8C8A86" stroke-width="3" />
+        <path class="cl-dashed" d="M15,100 Q24,130 15,160 Q6,190 15,220 Q24,250 15,280 Q6,310 15,340 Q24,370 15,400 Q6,430 15,460 Q24,490 15,520 Q6,550 15,580 Q24,610 15,640 Q6,670 15,700 Q24,730 15,750" stroke="#B07AA1" stroke-width="1" fill="none" />
+      </svg>
+
+      <div class="phase-header reveal">
+        <div class="phase-number">Phase 2</div>
+        <h3 class="phase-title">矩阵里的内在萌芽</h3>
+        <div class="phase-subtitle">The Undercurrent</div>
+      </div>
+
+      <div class="narration reveal">在世俗的框架中 make a living；内在的探寻在疯狂生长。</div>
+
+      <!-- 2018: 红尘线 (left) + 内在线 (right) — merged -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-left">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">进入<span class="entry-accent">战略咨询</span>行业</h4>
+            <p class="entry-detail">Became a <span class="entry-accent">Consultant</span><br /><span class="sub">服务美元基金：CDD（商业尽职调查）与投后管理</span><span class="sub">服务大型企业：海外高端护肤品牌大中华区增长战略、上市互联网企业 LTV 提升等</span><span class="sub" style="font-style:italic;margin-top:.5rem;color:var(--ink-3)">干活又好又快的全自动内卷式牛马</span></p>
+          </div>
+        </div>
+        <div class="year-marker"><span>2018</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">阅读<span class="entry-accent">心理学</span> <span class="entry-accent">哲学</span>相关入门书籍</h4>
+            <p class="entry-detail">"当你有很多疑惑，看看前人的思考，也许有答案呢。"<br />"众所周知，B 站是用来学习的。"<br />"当然是荣格啊。"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2019-2022: 内在线 (right) -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-empty"></div>
+        <div class="year-marker"><span>2019&ndash;22</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">大量<span class="entry-accent">疗愈体验</span></h4>
+            <p class="entry-detail">工作之余参与线下疗愈工作坊，体验了戏剧、催眠、舞动、绘画等各类形式。<br /><span class="sub">一方面启动自愈进程，一方面收集了很多 consumer insights</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2020: 内在线 (right) -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-empty"></div>
+        <div class="year-marker"><span>2020</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">接触<span class="entry-accent">芳香疗法</span></h4>
+            <p class="entry-detail">并持续运用实践至今，帮助自己和家人朋友重获身心健康。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PHASE 3: 弹出矩阵，潜入"无菌舱"
+         ══════════════════════════════════════ -->
+    <div class="phase phase-3" id="phase-3">
+
+      <!-- Phase3: 世俗虚曲线(粗1灰反相) + 内在实曲线(粗3粉紫Glow), 静态 -->
+      <svg class="core-svg p3" preserveAspectRatio="none" viewBox="0 0 30 950" aria-hidden="true">
+        <path class="cl-dashed cl-faint" d="M15,80 Q5,110 15,140 Q25,170 15,200 Q5,230 15,260 Q25,290 15,320 Q5,350 15,380 Q25,410 15,440 Q5,470 15,500 Q25,530 15,560 Q5,590 15,620 Q25,650 15,680 Q5,710 15,740 Q25,770 15,800 Q5,830 15,860 Q25,890 15,920 Q5,950 15,950" stroke="#8C8A86" stroke-width="1" fill="none" />
+        <path class="cl-glow" d="M15,80 Q25,110 15,140 Q5,170 15,200 Q25,230 15,260 Q5,290 15,320 Q25,350 15,380 Q5,410 15,440 Q25,470 15,500 Q5,530 15,560 Q25,590 15,620 Q5,650 15,680 Q25,710 15,740 Q5,770 15,800 Q25,830 15,860 Q5,890 15,920 Q25,950 15,950" stroke="#B07AA1" stroke-width="3" fill="none" />
+      </svg>
+
+      <div class="phase-header reveal">
+        <div class="phase-number">Phase 3</div>
+        <h3 class="phase-title">弹出矩阵，潜入"无菌舱"</h3>
+        <div class="phase-subtitle">Ejection &amp; The Sterile Cabin</div>
+      </div>
+
+      <div class="narration reveal">内在生命能量达到阈值，旧有的线性轨道彻底断裂。<br />逃离现实引力，进入内在深海重塑自我。</div>
+
+      <!-- 2022-2025: 内在线 (right) -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-empty"></div>
+        <div class="year-marker"><span>2022&ndash;25</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">系统修习<span class="entry-accent">古典瑜伽</span></h4>
+            <p class="entry-detail">师承印度 Kuvalayananda 体系<br /><span class="sub">培训 600+ 小时，实修 1000+ 小时</span><span class="sub">至今保持每日规律习练</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2023: 寺庙(right·上) + 离职(left·下) — 合并时间戳，离职错后 -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-left" style="margin-top:3.2rem">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title" style="font-size:1.3rem">离职啦</h4>
+            <p class="entry-detail">"当新的灵魂不再适应旧的身体，<br />内在的力量会带你去往新的地方。"</p>
+          </div>
+        </div>
+        <div class="year-marker"><span>2023</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">住在<span class="entry-accent">寺庙</span>里</h4>
+            <p class="entry-detail">积攒了两年的年假一次用掉，请假去寺庙住了半月。<br />体验每天 4am 起床诵经的生活。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2023-2025: 内在线 (right) — 疗愈课程 -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-empty"></div>
+        <div class="year-marker"><span>2023&ndash;25</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">密集学习各类<span class="entry-accent">疗愈课程</span></h4>
+            <p class="entry-detail"><span class="sub"><b>2023 开始：</b>系统学习现代催眠治疗，理论 + 实践 600+ 小时，后续每年跟随美国艾瑞克森基金会进修；</span><span class="sub"><b>2024 开始：</b>集中学习艺术疗愈 NDP 戏剧-游戏疗法、声音与舞动疗愈…</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2023-2024: 内在线 (right) — 疗愈师实践 -->
+      <div class="timeline-year-group reveal">
+        <div class="entry entry-empty"></div>
+        <div class="year-marker"><span>2023&ndash;24</span></div>
+        <div class="entry entry-right">
+          <span class="connector-line"></span>
+          <div class="entry-body">
+            <h4 class="entry-title">作为<span class="entry-accent">疗愈师</span>的实践</h4>
+            <p class="entry-detail"><span class="sub">2023 年 4 月，带领了第一场线下团体冥想</span><span class="sub">2023 年 11 月，带领了第一个催眠系列工作坊</span><span class="sub">截止 2024 年底，一对一个案价格增长 <span class="entry-accent">20 倍</span></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="narration reveal">23-24 是有些"矫枉过正"的一年。<br />在那些全是爱与包容的"无菌舱"里，我重塑了内在之前没有的那部分——关于如何柔软敞开、如何与人交互沟通、如何爱与被爱。但同时也完全摒弃了曾经在红尘习得的那部分。<br /><br />而在后续个案和团体实践过程中，我也逐渐意识到：脱离现实的内在疗愈，太容易成为一种逃避。</div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PHASE 4: 红尘实修
+         ══════════════════════════════════════ -->
+    <div class="phase phase-4" id="phase-4">
+
+      <!-- Phase4: 双螺旋, 世俗实曲线(粗5黄) + 内在实曲线(粗5粉紫), 静态 -->
+      <svg class="core-svg p4" preserveAspectRatio="none" viewBox="0 0 30 750" aria-hidden="true">
+        <path class="cl-helix-a" d="M15,60 Q27,90 15,120 Q3,150 15,180 Q27,210 15,240 Q3,270 15,300 Q27,330 15,360 Q3,390 15,420 Q27,450 15,480 Q3,510 15,540 Q27,570 15,600 Q3,630 15,660 Q27,690 15,720 Q3,750 15,750" stroke="#E2C270" stroke-width="5" fill="none" />
+        <path class="cl-helix-b" d="M15,60 Q3,90 15,120 Q27,150 15,180 Q3,210 15,240 Q27,270 15,300 Q3,330 15,360 Q27,390 15,420 Q3,450 15,480 Q27,510 15,540 Q3,570 15,600 Q27,630 15,660 Q3,690 15,720 Q27,750 15,750" stroke="#B07AA1" stroke-width="5" fill="none" />
+      </svg>
+
+      <div class="phase-header reveal">
+        <div class="phase-number">Phase 4</div>
+        <h3 class="phase-title">红尘实修</h3>
+        <div class="phase-subtitle">The Double Helix Integration</div>
+      </div>
+
+      <div class="narration reveal">这一次，不再有平行的两条线。<br />理性逻辑与灵性直觉交织成了「内在成长 × 外部创造」的双螺旋。</div>
+      <div class="phase-quote reveal">"You are not here to choose between inner and outer worlds.<br />You are here to master both."</div>
+
+      <!-- 2025-至今: 居中文本 -->
+      <div class="narration reveal" style="max-width:600px;text-align:center;font-style:normal;font-size:.9rem;line-height:1.9;color:var(--ink-2)">
+        <p style="font-family:var(--serif);font-size:1.1rem;font-style:italic;font-weight:500;color:var(--ink);margin-bottom:1rem">内在成长 × 外部创造</p>
+        <p>不再排斥世俗，而是将 3D 世界的摩擦视为修炼内功的道场。<br />将战略咨询的框架与深度的意识干预相融合。</p>
+        <p style="margin-top:.6rem"><span class="sub" style="font-size:.82rem">一方面，持续帮助更多"同类"（高认知、高敏感）重构内在，实现成长；</span><br /><span class="sub" style="font-size:.82rem">另一方面，将底层规律与共性解法沉淀为 <span class="entry-accent">OLYNX</span> 体系，从疗愈师蜕变为创业者，致力于打造能够赋能一代人的「国民幸福操作系统」。</span></p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══ REMAINING MODULE STUBS ═══ -->
+    <!-- ═══════════════════════════════════════════════════
+       MODULE 2 — THE MANIFESTO
+       ═══════════════════════════════════════════════════ -->
+  <section id="narrative" aria-label="Module 2 — The Manifesto">
+
+    <!-- Fixed sticky header -->
+    <header class="mf-header reveal">
+      <p class="mf-header-eyebrow">My Narrative &nbsp;·&nbsp; 02</p>
+      <h2 class="mf-header-title">My Narrative</h2>
+      <p class="mf-header-sub">Realize your Inside-Out UNICHE</p>
+    </header>
+
+    <!-- Scroll blocks -->
+    <div class="mf-scroll">
+
+      <!-- ── Block 1: The Why ── -->
+      <article class="mf-block reveal">
+        <span class="mf-index">I &nbsp;—&nbsp; The Why</span>
+
+        <blockquote class="mf-quote">
+          "AI 正在倒逼我们成为真正的「人」。"
+        </blockquote>
+
+        <div class="mf-body">
+          <p>上个时代所奖励的，正在飞速变得愈发廉价。</p>
+
+          <p>AI 的出现是一场巨大的倒逼。当信息、逻辑、效率甚至智商都不再是人的壁垒，当那个由标签组成的"假自我"迟早可以被模拟和替代…… 人们被迫陷入存在的诘问：我作为我，到底可以创造和留下些什么？</p>
+
+          <p>我相信，人类最后的不可替代性，是来自灵魂深处的呼唤，是由无数试错、顿悟与狂喜交织而成的、不可复制的生命轨迹，是基于个体独特叙事的审美和品味，是感知与给出爱的能力。<br />而这些都需要一个人真的非常诚实地，靠近内在最深处的那个自己。</p>
+
+          <p><span class="en">Go Inside and get really close to yourself.</span><br />这是 AI 时代保持主体性的绝对必需品。</p>
+
+          <span class="mf-rule" aria-hidden="true"></span>
+
+          <p><span class="bold">不沦为系统的 NPC，拿回生命的主理权。</span></p>
+        </div>
+      </article>
+
+      <!-- ── Block 2: The Destination ── -->
+      <article class="mf-block reveal">
+        <span class="mf-index">II &nbsp;—&nbsp; The Destination</span>
+
+        <blockquote class="mf-quote">
+          "不负天赐，每个人都有属于自己的独特生态位。"
+        </blockquote>
+
+        <div class="mf-body">
+          <p>大部分人习惯了在零和博弈中牺牲自我以换取生存，但我坚信这绝非终极真理。</p>
+
+          <p>我相信的下一个时代的真理是，每个个体都会有其独一无二的生态位，我称之为</p>
+
+          <span class="mf-uniche">UNICHE&ensp;=&ensp;Unique + Niche</span>
+
+          <p>当个体剥离外部的噪音、最大化靠近自己的天赋道路，站上这个点位，<br />其内在的自我实现，将与整个外部世界的价值创造高度统一。</p>
+
+          <p>在这里，没有内耗，没有竞争。<br />你不必在「做自己」和「活下去」之间做单选题。</p>
+
+          <p>人们只需淋漓尽致地做自己，便是推动系统演进的最优解。</p>
+        </div>
+      </article>
+
+      <!-- ── Block 3: The Path ── -->
+      <article class="mf-block reveal">
+        <span class="mf-index">III &nbsp;—&nbsp; The Path</span>
+
+        <blockquote class="mf-quote">
+          "向内扎根，向外创造。"
+        </blockquote>
+
+        <div class="mf-body">
+          <p>如何抵达？我主张一条内外并行的双螺旋路径。</p>
+
+          <p><span class="bold">向内，</span>穿越头脑的枷锁，真的用"心"看见自己的天赋，也诚实看见自己的阴影 —— 看见、接纳、整合、脱落。<br /><span class="bold">向外，</span>去和世界交互、碰撞，把内在状态"打印"到物质世界 —— 每一个选择、每一次行动，都在为"我是谁"增加可见的形状。</p>
+
+          <p>只有外在追求，没有内在修持，身心系统很容易在某刻崩塌；而只做内在功课，不对外部世界"做功"，想法永远无法成为现实。</p>
+
+          <p>双螺旋提倡一种流畅自然的存在方式：做事本身就是修心，而修心又自然指向更干净的行动。</p>
+
+          <p style="font-family:var(--serif);font-style:italic;font-size:1.05em;color:var(--ink);padding-left:1.6rem;border-left:2px solid var(--terra);border-left-color:rgba(139,74,43,.35);">"在做事的摩擦中消融内在的障碍，在现实的淬炼中习得处事的圆融。"</p>
+
+          <p>所有的内在功课，都是在为了更好地前进而修路；所有的外部创造，都是在这条路上继续前行。<br />内在与外在的螺旋交错上升的每一圈，都是灵魂在这个世界里，以一种更完整、更自由的方式，重新成为"我自己"。</p>
+        </div>
+
+        <span class="mf-coda reveal">Realize your Inside-Out UNICHE.</span>
+      </article>
+
+    </div><!-- /mf-scroll -->
+
+  </section>
+    <!-- ═══════════════════════════════════════════════════
+       MODULE 3 — THE ARSENAL (Bento Box Grid)
+       ═══════════════════════════════════════════════════ -->
+  <section id="toolbox" aria-label="Module 3 — The Arsenal">
+
+    <!-- Section Header -->
+    <header class="ar-header reveal">
+      <span class="ar-header-eyebrow">03 &nbsp;·&nbsp; The Hybrid Arsenal</span>
+      <h2 class="ar-header-title">The Arsenal</h2>
+      <p class="ar-header-sub">左手战略逻辑，右手心智炼金</p>
+    </header>
+
+    <!-- Bento Grid -->
+    <div class="ar-grid" aria-label="能力网格">
+
+      <!-- ══ Col Head: The Architect ══ -->
+      <div class="ar-col-head reveal">
+        <span class="ar-col-head-label">Left Brain</span>
+        <p class="ar-col-head-title">The Architect</p>
+        <p style="font-family:var(--sans);font-size:.72rem;color:var(--ink-3);margin-top:.3rem;letter-spacing:.05em;">商业战略 &amp; 实战落地</p>
+        <!-- Grid icon -->
+        <div class="ar-col-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect x="1" y="1" width="10" height="10" stroke="#8B4A2B" stroke-width="0.8"/>
+            <rect x="14" y="1" width="10" height="10" stroke="#8B4A2B" stroke-width="0.8"/>
+            <rect x="1" y="14" width="10" height="10" stroke="#8B4A2B" stroke-width="0.8"/>
+            <rect x="14" y="14" width="10" height="10" stroke="#8B4A2B" stroke-width="0.8"/>
+            <rect x="27" y="1" width="8" height="8" stroke="#8B4A2B" stroke-width="0.5" opacity="0.4"/>
+            <rect x="27" y="14" width="8" height="8" stroke="#8B4A2B" stroke-width="0.5" opacity="0.4"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ══ Col Head: The Alchemist ══ -->
+      <div class="ar-col-head reveal">
+        <span class="ar-col-head-label">Right Brain</span>
+        <p class="ar-col-head-title">The Alchemist</p>
+        <p style="font-family:var(--sans);font-size:.72rem;color:var(--ink-3);margin-top:.3rem;letter-spacing:.05em;">深度潜意识干预 &amp; 心智重塑</p>
+        <!-- Wave icon -->
+        <div class="ar-col-icon" aria-hidden="true">
+          <svg width="52" height="24" viewBox="0 0 52 24" fill="none">
+            <path d="M2 12 C8 4, 14 4, 20 12 C26 20, 32 20, 38 12 C44 4, 50 4, 52 10" stroke="#B07AA1" stroke-width="1.2" fill="none"/>
+            <path d="M2 16 C8 8, 14 8, 20 16 C26 24, 32 22, 38 16 C44 8, 50 10, 52 14" stroke="#B07AA1" stroke-width="0.6" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ══ Architect Card 1: 产品漏斗 ══ -->
+      <div class="ar-card reveal">
+        <h3 class="ar-card-title">
+          产品漏斗与用户旅程设计
+          <span class="ar-tag">Strategy</span>
+        </h3>
+        <ul class="ar-bullets">
+          <li>战略咨询思维 × 心理学洞察，重塑用户决策链路</li>
+          <li>实现丝滑转化与升单</li>
+          <li>辅导社交平台实现 <span class="ar-hl-bg">LTV 大幅提升</span></li>
+        </ul>
+      </div>
+
+      <!-- ══ Alchemist Card 1: 催眠 (tall card, spans 2 rows) ══ -->
+      <div class="ar-card ar-tall reveal">
+        <h3 class="ar-card-title">
+          催眠与潜意识工程
+          <span class="ar-tag">Hypnosis · NLP</span>
+        </h3>
+        <ul class="ar-bullets">
+          <li><span class="ar-hl-bg">NGH &amp; ABNLP</span> 国际双认证</li>
+          <li>艾瑞克森学派现代催眠疗法</li>
+          <li>NLP 教练体系</li>
+          <li>跟随<span class="ar-hl">美国艾瑞克森基金会</span>多位导师学习</li>
+        </ul>
+
+        <div style="margin-top:1.6rem">
+          <h3 class="ar-card-title" style="margin-top:.5rem">
+            神经戏剧与表达艺术
+            <span class="ar-tag">NDP · Expressive Arts</span>
+          </h3>
+          <ul class="ar-bullets">
+            <li>师承 NDP 创始人 <span class="ar-hl-bg">Dr. Sue Jennings</span></li>
+            <li>国内首批 Diploma 认证，<span class="ar-hl">Top 5% 成绩毕业</span></li>
+            <li>赴 <span class="ar-hl-bg">马来西亚原始部落</span> 开展心智田野调查</li>
+            <li>师承<span class="ar-hl">欧文·亚隆之子 Benjamin Yalom</span></li>
+            <li>舞动、音乐创作课堂原创获老师高度认可</li>
+          </ul>
+
+          <!-- Photo placeholder grid -->
+          <div class="ar-photo-grid" aria-label="田野调查纪实">
+            <div class="ar-photo-slot">
+              <img src="fieldwork-01.JPG" alt="马来西亚丛林田野调查" loading="lazy" />
+            </div>
+            <div class="ar-photo-slot">
+              <img src="fieldwork-02.jpg" alt="表达艺术疗愈现场" loading="lazy" style="object-position:25% 30%" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ Architect Card 2: 商业模式 ══ -->
+      <div class="ar-card reveal">
+        <h3 class="ar-card-title">
+          商业模式梳理与精细化运营
+          <span class="ar-tag">Business</span>
+        </h3>
+        <ul class="ar-bullets">
+          <li>精准目标人群分层与核心业务线定位</li>
+          <li>辅助高敏感 / 高灵性创业者</li>
+          <li>将宏大愿景落地为<span class="ar-hl-bg">可执行印钞机</span></li>
+        </ul>
+      </div>
+
+      <!-- ══ Architect Card 3: 线下空间 ══ -->
+      <div class="ar-card ar-span2 reveal">
+        <h3 class="ar-card-title">
+          线下空间与极致体验设计
+          <span class="ar-tag">Experience</span>
+        </h3>
+        <ul class="ar-bullets">
+          <li>新消费门店 · 主题园区 · 高端健康会所</li>
+          <li>用户洞察 → 业务线评估 → SOP 优化 → 员工培训</li>
+          <li>用户体验大幅优化 &amp; 营收增长</li>
+        </ul>
+      </div>
+
+      <!-- ══ Alchemist Card 2: 东方古老智慧 ══ -->
+      <div class="ar-card ar-right reveal">
+        <h3 class="ar-card-title">
+          东方古老智慧与能量医学
+          <span class="ar-tag">Yoga · Sound · Aroma</span>
+        </h3>
+        <ul class="ar-bullets">
+          <li><span class="ar-hl-bg">2年古典瑜伽师徒制</span>，传承印度 Kuvalayananda 完整体系</li>
+          <li>精研《瑜伽经》，阿育吠陀理疗</li>
+          <li>南美萨满传承整合音声疗愈：人声吟唱 · 颂钵 · 铜锣 · 萨满鼓</li>
+          <li><span class="ar-hl-bg">NAHA 认证芳疗师</span>，5年实战，原创植物能量香氛广受好评</li>
+        </ul>
+      </div>
+
+      <!-- ══ Impact Row (full width) ══ -->
+      <div class="ar-impact-row reveal">
+        <div class="ar-impact-head">
+          <h3 class="ar-impact-head-title">The Impact &nbsp;—&nbsp; 真实世界的炼金结果</h3>
+          <span class="ar-impact-head-note">受众：高认知 / 高敏感 / 高灵性</span>
+        </div>
+
+        <div class="ar-cases">
+          <!-- Case 1 -->
+          <div class="ar-case">
+            <span class="ar-case-tag">融资跨越</span>
+            <p class="ar-case-desc">Lifestyle 健康食品创始人：梳理核心商业线 + 消除内在卡顿 ➔ 清晰讲述品牌规划与路径</p>
+            <span class="ar-case-result">斩获 <span class="ar-hl">天使轮融资</span></span>
+          </div>
+          <!-- Case 2 -->
+          <div class="ar-case">
+            <span class="ar-case-tag">破局变现</span>
+            <p class="ar-case-desc"><span class="ar-hl-bg">Top 2 金融背景</span>证券精英：命理工具 × 战略定位 × 人本心理支持 ➔ 跨越职场瓶颈与裁员危机</p>
+            <span class="ar-case-result">成功变现<span class="ar-hl"> 第二曲线</span></span>
+          </div>
+          <!-- Case 3 -->
+          <div class="ar-case">
+            <span class="ar-case-tag">从 0 到 1</span>
+            <p class="ar-case-desc">线下疗愈场馆：品牌美学设计 + 私域情绪链接 ➔ 首批高净值用户积累</p>
+            <span class="ar-case-result">迅速<span class="ar-hl"> 破局盈利</span></span>
+          </div>
+          <!-- Case 4 -->
+          <div class="ar-case">
+            <span class="ar-case-tag">财富升维</span>
+            <p class="ar-case-desc">独立疗愈师：产品体系化设计 + 破除深层金钱卡点 ➔ 从零散接单跃升</p>
+            <span class="ar-case-result">稳定且<span class="ar-hl"> 高溢价商业闭环</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /ar-grid -->
+
+  </section>
+  <section id="olynx" aria-label="Module 4 — The Vision · OLYNX Universe">
+
+    <!-- Cosmic breathing orbs -->
+    <div class="vision-orb" aria-hidden="true"></div>
+    <div class="vision-orb-2" aria-hidden="true"></div>
+
+    <!-- ══ SECTION HEADER ══ -->
+    <div class="vision-header reveal">
+      <p class="vision-overline">The Vision</p>
+      <h2 class="vision-title">Illuminate the<br/>dormant brilliance.</h2>
+      <p class="vision-subtitle">点亮沉睡的恒星</p>
+    </div>
+
+    <!-- ══ THE SHIFT — 引言 ══ -->
+    <div class="vision-shift reveal">
+      <p>我曾在这个世界最精密的<span class="v-em">"优绩主义矩阵"</span>中狂奔，却发现尽头没有我想要的答案。</p>
+
+      <p>在长达数年的向内探索中，剥落旧有的思想钢印，将自己重新养育一遍。</p>
+
+      <p>后来，当我把这些真实经历的<span class="v-em">「自渡」</span>解法分享给身边的同频者，我发现这群人的共性：</p>
+
+      <p><span class="v-em">"太细腻而难以麻木，太聪明而难以苟同。"</span></p>
+
+      <p>他们拥有极高认知，或极强感知力，是社会的<span class="v-em-gold">"异常值 (Outliers)"</span>。</p>
+
+      <p>而这群内在有着无法熄灭火苗的人，正是推动人类社会持续进步的巨大源动力。</p>
+
+      <p>当他们卸下头脑的枷锁、将生命力重新扎根于现实，爆发出的不仅是重获自由的喜悦，更是惊人的创造力。</p>
+
+      <p>他们是火种，是未来的恒星，他们不该在旧系统的摩擦中黯淡蒙尘。</p>
+
+      <p>这群人需要的从来不是短暂的抚慰，而是一套能让他们彻底发挥天赋的<span class="v-em-gold">「底层操作系统」</span>。</p>
+
+      <p>这正是 <span class="v-em-gold">OLYNX</span> 的发愿：<span class="v-em">在真实的荒野中点亮火种，孵化未来的恒星。</span></p>
+    </div>
+
+    <!-- ══ THE INCUBATOR — 孵化矩阵 ══ -->
+    <div class="vision-incubator reveal">
+      <!-- Left: Spiritual Entrepreneur -->
+      <div class="v-card v-card-left">
+        <h3 class="v-card-head">赋能<span class="v-highlight">「高认知者」</span><br/>&#10142; 孵化 Spiritual Entrepreneur</h3>
+        <p class="v-card-body">
+          打破优绩主义的逻辑铠甲与精英防御。用逻辑说服头脑，用爱浇灌心灵。当他们重新习得"心"的能力，将不再被恐惧驱动，而是用顶级的现实操盘能力<span class="v-em-gold">重写人间的商业规则</span>。
+        </p>
+      </div>
+      <!-- Right: Spiritual Artist -->
+      <div class="v-card v-card-right">
+        <h3 class="v-card-head">赋能<span class="v-highlight">「高敏感 / 高灵性者」</span><br/>&#10142; 孵化 Spiritual Artist</h3>
+        <p class="v-card-body">
+          打破悬浮的灵性逃避。在绝不阉割其灵性洁癖的前提下，嫁接战略商业逻辑与 3D 落地能力。将虚无缥缈的灵感，切切实实地转化为<span class="v-em-gold">推动人类意识跃迁的作品与印钞机</span>。
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ THE ENGINE — 核心架构 ══ -->
+    <div class="vision-engine reveal">
+      <p class="vision-engine-label">Core Architecture</p>
+      <div class="vision-engine-divider" aria-hidden="true"></div>
+
+      <div class="vision-engine-grid">
+        <div class="v-engine-item">
+          <p class="v-engine-name">Journey to <span class="glow-o">O</span>.</p>
+          <p class="v-engine-sub" style="color:var(--cosmic-purple)">向内扎根</p>
+          <p class="v-engine-desc">解构旧的认知枷锁，清洗过往情绪沉积，一步步靠近更纯净的真我。</p>
+        </div>
+        <div class="v-engine-item">
+          <p class="v-engine-name">Create with <span class="glow-x">X</span>.</p>
+          <p class="v-engine-sub" style="color:var(--star)">向外生长</p>
+          <p class="v-engine-desc">带着极度的清明重新入世，在商业与日常的摩擦中创造，在世界留下痕迹，照亮更多人。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CTA — 结语与行动 ══ -->
+    <div class="vision-cta reveal">
+      <p class="vision-cta-text">
+        当火种被一颗颗点亮，个人价值创造的轨迹，<br/>将与人类系统演进的最优方向高度重合。<br/><br/>
+        你不必在<span class="v-em">"做自己"</span>和<span class="v-em">"赢在现实"</span>之间做单选题。
+      </p>
+
+      <div class="vision-cta-buttons">
+        <a href="https://olynx.space" target="_blank" rel="noopener" class="v-btn v-btn-primary">Enter OLYNX Universe<span style="margin-left:.5em;">&rarr;</span></a>
+        <button class="v-btn v-btn-secondary" onclick="document.getElementById('qr-modal').classList.add('active');document.body.style.overflow='hidden';">Contact Syeen<span style="margin-left:.5em;">&rarr;</span></button>
+      </div>
+    </div>
+
+    <div class="vision-spacer" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer style="background:var(--cosmic-deep);border-top:.5px solid var(--cosmic-border);"><p style="color:var(--cosmic-muted);">&copy; 2026 &ensp;&middot;&ensp; Be Your Own Script Writer</p></footer>
+
+  <!-- ═══ QR MODAL ═══ -->
+  <div class="qr-modal-overlay" id="qr-modal" onclick="if(event.target===this){this.classList.remove('active');document.body.style.overflow='';}">
+    <div class="qr-modal">
+      <button class="qr-modal-close" onclick="document.getElementById('qr-modal').classList.remove('active');document.body.style.overflow='';" aria-label="Close">&times;</button>
+      <p class="qr-modal-title">Contact Syeen</p>
+      <p class="qr-modal-sub">扫码添加 Syeen 微信</p>
+      <img src="qr-contact.png" alt="Syeen 微信二维码" loading="lazy" />
+      <p style="font-family:var(--sans);font-size:.78rem;font-weight:400;color:var(--cosmic-text);margin-top:1rem;letter-spacing:.04em;">SyeenLight99</p>
+    </div>
+  </div>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    /* ─── NAV SCROLL ──────────────────────────────────────────── */
+    var nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ─── HERO ENTRANCE ANIMATION ────────────────────────────── */
+    (function setupEntrance() {
+      var style = document.createElement('style');
+      style.textContent =
+        '.hero-text-panel > * { opacity: 0; transform: translateY(22px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }' +
+        '.hero-text-panel > *.visible { opacity: 1; transform: translateY(0); }' +
+        '.hero-image-panel { opacity: 0; transition: opacity 1.2s ease 0.2s; }' +
+        '.hero-image-panel.visible { opacity: 1; }';
+      document.head.appendChild(style);
+
+      window.addEventListener('load', function() {
+        var targets = document.querySelectorAll('.hero-text-panel > *');
+        targets.forEach(function(el, i) {
+          setTimeout(function() { el.classList.add('visible'); }, 200 + i * 180);
+        });
+        var panel = document.querySelector('.hero-image-panel');
+        setTimeout(function() { if (panel) panel.classList.add('visible'); }, 300);
+      });
+    })();
+
+    /* ─── SCROLL-REVEAL (Intro + Timeline entries) ──────────── */
+    (function setupReveal() {
+      var reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      reveals.forEach(function(el) { observer.observe(el); });
+    })();
+
+    // Phase SVGs are always visible (opacity:1), no toggling needed.
+  </script>
+
+</body>
+</html>
