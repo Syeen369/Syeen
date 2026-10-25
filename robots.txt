@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://syeen.space/sitemap.xml

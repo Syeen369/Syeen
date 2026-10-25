@@ -880,6 +880,44 @@
     /* SVG filter definition (hidden) */
     .svg-defs{position:absolute;width:0;height:0}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://syeen.space/#person",
+        "name": "Syeen",
+        "alternateName": "林熹嵘",
+        "url": "https://syeen.space/",
+        "image": "https://syeen.space/portrait-1.jpg",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "北京大学",
+          "alternateName": "Peking University"
+        },
+        "description": "Syeen毕业于北京大学，学习经济与金融，同时长期研究冥想、心理、哲学等领域，关注人的内在健康和谐与外在成就平衡发展。2024年创立了品牌「OLYNX 至臻」",
+        "sameAs": [
+          "https://www.xiaohongshu.com/user/profile/55729b2d8a75e12cebdef7cd"
+        ],
+        "worksFor": {
+          "@id": "https://www.olynx.space/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.olynx.space/#organization",
+        "name": "OLYNX",
+        "alternateName": "OLYNX 至臻",
+        "url": "https://www.olynx.space/",
+        "founder": {
+          "@id": "https://syeen.space/#person"
+        },
+        "foundingDate": "2024"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
